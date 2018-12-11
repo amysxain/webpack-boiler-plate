@@ -1,0 +1,73 @@
+@import "bootstrap/bootstrap";
+@import '_defaults';
+
+
+/*
+Basic input field template to style
+<label for="name"class="input-wrap after-pink">
+  <input required=""type="text"class="form-control"id="name"name="Name">
+  <span class="input-label">Name</span>
+</label>*/
+
+.input-wrap {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+
+  .input-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    opacity: .5;
+    transition: all ease .3s;
+  }
+
+  .form-control {
+    background: transparent;
+    height: 50px;
+    border-radius: 0;
+    box-shadow: 2px 0 13px 0 rgba(0, 0, 0, 0.1);
+    border: 0;
+    background: #FFF;
+
+    &:focus {
+      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+
+      +.input-label {
+        left: 5px;
+        top: 100%;
+        font-size: 80%;
+        opacity: 1;
+      }
+    }
+  }
+
+  &.focused {
+    .input-label {
+      left: 5px;
+      top: 100%;
+      font-size: 80%;
+      opacity: 1;
+    }
+
+    .form-control {
+      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* Validation error styling */
+.validation-error {
+  position: absolute;
+  right: 20px;
+  font-size: 12px;
+  color: #400e13;
+  background-color: #f8d7da;
+  border: 1px solid #df9ba1;
+  padding: 0 10px;
+  font-weight: 500;
+  top: calc(100% - 10px);
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px rgba(222, 154, 160, .8);
+}
